@@ -1,14 +1,20 @@
 import { useState, useEffect } from "react"
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 import { getGameById } from "../../managers/GameManager"
+import { getReviewsForGame } from "../../managers/ReviewManager"
+import { Review } from "./Review"
+import "./Game.css"
 
 export const GameDetails = () => {
+    const navigate = useNavigate()
     const { gameId } = useParams()
     const [ currentGame, setCurrentGame ] = useState({})
+    const [ gameReviews, setGameReviews ] = useState([])
 
     useEffect(
         () => {
             getGameById(gameId).then(setCurrentGame)
+            getReviewsForGame(gameId).then(setGameReviews)
         },
         []
     )
@@ -45,6 +51,20 @@ export const GameDetails = () => {
             
             </>
         }
-        
+
+        <h3>Reviews</h3>
+        <button onClick={() => navigate(`/games/${gameId}/review`)}>WRITE A FRIGGIN REVIEW</button>
+
+        {
+            (gameReviews)
+            ? <>
+                {
+                    gameReviews.map( reviewObj => <Review 
+                        reviewObj={reviewObj}    
+                    />)
+                }
+            </>
+            : <></>
+        }
     </>
 }

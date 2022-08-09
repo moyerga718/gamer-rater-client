@@ -1,0 +1,9 @@
+.reviewHeader {
+    display: flex;
+}
+
+.reviewDiv {
+    padding: 1rem;
+    border: solid black 1px;
+    margin: 3rem;
+}

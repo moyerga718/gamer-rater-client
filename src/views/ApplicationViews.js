@@ -5,6 +5,8 @@ import { Authorized } from "./Authorized"
 import { GameList } from "../components/game/GameList"
 import { GameDetails } from "../components/game/GameDetails"
 import { GameForm } from "../components/game/GameForm"
+import { ReviewForm } from "../components/game/ReviewForm"
+
 
 
 export const ApplicationViews = () => {
@@ -16,6 +18,7 @@ export const ApplicationViews = () => {
                 <Route path="/games" element={<GameList />} />
                 <Route path="/games/:gameId" element={<GameDetails />} />
                 <Route path="/games/create" element={<GameForm />} />
+                <Route path="/games/:gameId/review" element={<ReviewForm />} />
             </Route>
         </Routes>
     </>
