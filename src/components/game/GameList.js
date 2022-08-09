@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { getAllGames } from "../../managers/GameManager"
 
 export const GameList = () => {
+    const navigate = useNavigate()
     const [ games, setGames ] = useState([])
 
     useEffect(
@@ -15,6 +16,12 @@ export const GameList = () => {
     return <>
     
     <h1>Game List</h1>
+
+    <button onClick={() => 
+    {navigate("/games/create")}
+    }>
+        Register New Game
+    </button>
 
     {
         (games)
