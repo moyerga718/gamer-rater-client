@@ -47,13 +47,15 @@ export const GameDetails = () => {
                     )
                 }
             </>
-            : <>
+            : <> 
             
             </>
         }
 
+        <button onClick={() => navigate(`/games/${gameId}/edit`)}>Edit Game Details</button>
+
         <h3>Reviews</h3>
-        <button onClick={() => navigate(`/games/${gameId}/review`)}>WRITE A FRIGGIN REVIEW</button>
+        <button onClick={() => navigate(`/games/${gameId}/review`)}>Write a review</button>
 
         {
             (gameReviews)

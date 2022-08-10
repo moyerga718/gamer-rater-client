@@ -28,3 +28,17 @@ export const createGame = (game) => {
     })
         .then(response => response.json())
 }
+
+export const updateGame = (gameBody, gameId) => {
+    return fetch(`http://localhost:8000/games/${gameId}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "Authorization": `Token ${localStorage.getItem("lu_token")}`
+        },
+        body: JSON.stringify(gameBody)
+    })
+        // i guess I don't need / want the response for this??? idk, wasn't navigating before, now it is.
+        // .then(response => response.json())
+}
