@@ -7,3 +7,7 @@
     border: solid black 1px;
     margin: 3rem;
 }
+
+.game-link {
+    display: flex;
+}

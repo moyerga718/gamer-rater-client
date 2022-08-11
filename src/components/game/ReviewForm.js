@@ -27,16 +27,16 @@ export const ReviewForm = () => {
             
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="rating">Rating (1-5): </label>
+                    <label htmlFor="rating">Rating (1-10): </label>
                     <input type="number" name="rating" required autoFocus className="form-control"
                         value={reviewObj.rating}
                         onChange={(changeEvent) => {
-                            if (changeEvent.target.value < 6 && changeEvent.target.value > 0) {
+                            if (changeEvent.target.value < 11 && changeEvent.target.value > 0) {
                                 const gameCopy = {...reviewObj}
                                 gameCopy.rating = changeEvent.target.value
                                 setReviewObj(gameCopy)
                             } else {
-                                window.alert("GOTTA BE BETWEEN 1 AND 5 OK??")
+                                window.alert("GOTTA BE BETWEEN 1 AND 10 OK??")
                             }
                         }}
                     />

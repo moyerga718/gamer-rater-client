@@ -23,7 +23,7 @@ export const GameDetails = () => {
         {
             (currentGame)
             ? <>
-                <h2>{currentGame.title}</h2>
+                <h2>{currentGame.title} | {currentGame.average_rating}/10</h2>
                 <h3>About</h3>
                 <p>{currentGame.description}</p>
                 <h3>Details</h3>
